@@ -21,7 +21,7 @@
 
   // Set Kortforsyningen token, replace with your own token
 
-  var authstring = '?username=' + username + '&password=' + password
+  // var authstring = '?username=' + username + '&password=' + password
   //var authstring = '?username=' + username;
 
   // Set the attribution (the copyright statement shown in the lower right corner)
@@ -68,7 +68,7 @@
 
   // Skærmkort [WMTS:topo_skaermkort]
   let url =
-    `https://services.datafordeler.dk/DKskaermkort/topo_skaermkort_WMTS/1.0.0/WMTS?username=${username}&password=${password}` +
+    `https://services.datafordeler.dk/DKskaermkort/topo_skaermkort_WMTS/1.0.0/WMTS?username=${restauth.username}&password=${restauth.password}` +
     '&request=GetTile&version=1.0.0&layer=topo_skaermkort&format=image/png&style=default&service=WMTS&TileMatrixSet=View1&TileMatrix={zoom}&TileRow={y}&TileCol={x}'
   var toposkaermkortwmts = L.tileLayer(url, {
     layers: 'topo_skaermkort',
@@ -112,7 +112,7 @@
   // .format('YYYY-MM-DD HH:mm:ss')
   var todayparam = today.format('YYYY-MM-DD HH:mm:ss')
   var yesterdayparam = yesterday.format('YYYY-MM-DD HH:mm:ss')
-  let eventurl = `https://services.datafordeler.dk/system/EventMessages/1.0.0/custom?datefrom=${yesterdayparam}&dateto=${todayparam}&pagesize=100000&page=1&format=json&username=STLCLNICSE&password=Nuga10s..`
+  let eventurl = `https://services.datafordeler.dk/system/EventMessages/1.0.0/custom?datefrom=${yesterdayparam}&dateto=${todayparam}&pagesize=100000&page=1&format=json&username=${eventauth.username}&password=${eventauth.password}`
 
   var eventno = 0
   axios
