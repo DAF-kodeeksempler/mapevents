@@ -21,3 +21,11 @@ var password = 'YYYYY'
 ```
 
 XXXXX er det oprettede tjenestenavn og YYYYY er det tilhørende password.
+
+## Start i docker
+
+```
+docker run -p 2000:80 -v .:/usr/share/nginx/html nginx:alpine
+```
+
+gaa derefter ind paa http://localhost:2000 i den browser.
