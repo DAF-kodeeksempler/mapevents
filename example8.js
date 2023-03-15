@@ -68,7 +68,7 @@
 
   // Skærmkort [WMTS:topo_skaermkort]
   let url =
-    `https://services.datafordeler.dk/DKskaermkort/topo_skaermkort_WMTS/1.0.0/WMTS?username=${restauth.username}&password=${restauth.password}` +
+    `https://services.datafordeler.dk/DKskaermkort/topo_skaermkort_WMTS/1.0.0/WMTS?username=${username}&password=${password}` +
     '&request=GetTile&version=1.0.0&layer=topo_skaermkort&format=image/png&style=default&service=WMTS&TileMatrixSet=View1&TileMatrix={zoom}&TileRow={y}&TileCol={x}'
   var toposkaermkortwmts = L.tileLayer(url, {
     layers: 'topo_skaermkort',
